@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-api-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-api-web
+  template:
+    metadata:
+      labels:
+        app: ml-api-web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html-content
+          mountPath: /usr/share/nginx/html
+        - name: images
+          mountPath: /usr/share/nginx/html/images
+      volumes:
+      - name: html-content
+        configMap:
+          name: ml-api-html
+      - name: images
+        hostPath:
+          path: /Users/niladridas/Desktop/api
+          type: Directory
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ml-api-html
+data:
+  index.html: |
+    <html>
+    <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex items-center justify-center min-h-screen bg-cover" style="background-image: url('images/bniladridas ml-api.png');">
+        <div class="text-white text-4xl font-bold">ml-api</div>
+    </body>
+    </html>
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-api-web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: ml-api-web
