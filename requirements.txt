@@ -1,5 +1,5 @@
 fastapi==0.95.2
-transformers==4.53.0
+transformers==4.57.0
 uvicorn==0.37.0
 torch==2.8.0
 datasets==4.2.0
