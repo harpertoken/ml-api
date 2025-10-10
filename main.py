@@ -25,8 +25,9 @@ try:
         tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
         model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
 except Exception as e:
-    logger.error(f"Failed to load model: {str(e)}")
-    raise
+    logger.warning(f"Failed to load local model: {str(e)}, loading from remote")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
 
 app = FastAPI()
 
