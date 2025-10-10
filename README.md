@@ -1,90 +1,101 @@
 # ml-api  
-Build, deploy, and scale machine learning with ease.  
+build, deploy, and scale machine learning with ease.  
 
-## Craft Intelligence  
-ml-api is a sleek, RESTful API for deploying and serving machine learning models. Upload models, generate real-time predictions, and manage versions seamlessly.  
+## craft intelligence  
+ml-api is a sleek, restful api for deploying and serving machine learning models. upload models, generate real-time predictions, and manage versions seamlessly.  
 
+## features  
+- **upload models**: deploy your models effortlessly.  
+- **real-time inference**: generate predictions instantly.  
+- **version management**: keep your models organized and up to date.  
 
-## Features  
-- **Upload Models**: Deploy your models effortlessly.  
-- **Real-Time Inference**: Generate predictions instantly.  
-- **Version Management**: Keep your models organized and up to date.  
-
-## Get Started  
-1. Clone the repository:  
+## get started  
+1. clone the repository:  
    ```bash  
    git clone https://github.com/bniladridas/ml-api.git  
-   ```  
-2. Navigate to the project:  
-   ```bash  
+````
+
+2. navigate to the project:
+
+   ```bash
    cd ml-api  
-   ```  
-3. Install dependencies:  
-   ```bash  
+   ```
+3. install dependencies:
+
+   ```bash
    pip install -r requirements.txt  
-   ```  
+   ```
 
-## Deploy the Web Interface  
-```bash  
+## deploy the web interface
+
+```bash
 kubectl apply -f k8s.yaml
-```  
+```
 
-## Run the API  
-Launch the server with:  
-```bash  
+## run the api
+
+launch the server with:
+
+```bash
 python main.py  
-```  
+```
 
-### Example Request  
-```bash  
-curl -X POST http://localhost:5000/predict -d '{"data": [your_data_here]}'  
-```  
+### example request
 
-## Requirements  
-- Python 3.8+  
-- FastAPI, HuggingFace Transformers, PyTorch  
+```bash
+curl -x post http://localhost:5000/predict -d '{"data": [your_data_here]}'  
+```
 
-## Contribute  
-Shape the future of ml-api. Submit issues or pull requests to make it even better.
+## requirements
 
-## Conventional Commits
+* python 3.8+
+* fastapi, huggingface transformers, pytorch
 
-This project follows conventional commit standards to ensure clear and consistent commit messages.
+## contribute
 
-### Setup
+shape the future of ml-api. submit issues or pull requests to make it even better.
 
-To enable commit message validation:
+## conventional commits
 
-1. Copy the hook script to your local git hooks:
+this project follows conventional commit standards to ensure clear and consistent commit messages.
+
+### setup
+
+to enable commit message validation:
+
+1. copy the hook script to your local git hooks:
+
    ```bash
    cp scripts/commit-msg .git/hooks/commit-msg
    chmod +x .git/hooks/commit-msg
    ```
 
-### Commit Message Format
+### commit message format
 
-Commit messages must follow this format:
-- Start with a type: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `perf:`, `ci:`, `build:`, `revert:`
-- Followed by a space and a lowercase description
-- First line ≤60 characters
+commit messages must follow this format:
 
-Example: `feat: add user authentication`
+* start with a type: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `perf:`, `ci:`, `build:`, `revert:`
+* followed by a space and a lowercase description
+* first line ≤60 characters
 
-### History Cleanup
+example: `feat: add user authentication`
 
-If you need to clean up existing commit messages (make lowercase and truncate), use the rewrite script:
+### history cleanup
+
+if you need to clean up existing commit messages (make lowercase and truncate), use the rewrite script:
 
 ```bash
 bash scripts/rewrite_msg.sh
 ```
 
-For rewriting the entire history:
+for rewriting the entire history:
 
 ```bash
 git filter-branch --msg-filter 'bash scripts/rewrite_msg.sh' -- --all
 ```
 
-Note: This rewrites history, so use with caution and force-push if necessary.
+note: this rewrites history, so use with caution and force-push if necessary.
 
-## License  
-Licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## license
+
+licensed under the mit license. see the [license](license) file for details.
