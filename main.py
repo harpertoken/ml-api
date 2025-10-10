@@ -52,12 +52,12 @@ async def chat(request: ChatRequest):
     try:
         # Log incoming request
         logger.info(f"Received chat request")
-        
+
         # Get user prompt
         prompt = request.prompt
         if not prompt:
             raise HTTPException(status_code=400, detail="Prompt is required")
-        
+
         # Generate response
         inputs = tokenizer.encode(prompt, return_tensors="pt")
         outputs = model.generate(
@@ -69,17 +69,39 @@ async def chat(request: ChatRequest):
             top_p=0.95,
             temperature=0.7
         )
-        
+
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        
+
         # Log response
         logger.info(f"Generated response: {response}")
-        
+
         return {"response": response}
-    
+
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/models")
+async def get_models():
+    """Get information about available models."""
+    return {
+        "models": [
+            {
+                "name": "harpertokenConvAI",
+                "type": "causal_lm",
+                "description": "Conversational AI model for text generation"
+            }
+        ]
+    }
+
+@app.get("/status")
+async def get_status():
+    """Get API and model status."""
+    return {
+        "status": "running",
+        "model_loaded": True,
+        "model_name": "harpertokenConvAI"
+    }
 
 if __name__ == "__main__":
     import uvicorn
