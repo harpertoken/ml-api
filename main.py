@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 # Load fine-tuned model
 MODEL_PATH = "./fine_tuned_model"
-MODEL_NAME = "harpertoken/harpertokenConvAI"
+MODEL_NAME = "gpt2"
 
 try:
     if os.path.exists(MODEL_PATH):
