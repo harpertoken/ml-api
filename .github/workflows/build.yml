@@ -26,3 +26,21 @@ jobs:
         context: .
         push: false
         tags: ghcr.io/harpertoken/ml-api:latest
+
+    - name: Run E2E tests
+      run: |
+        # Start the container
+        docker run -d --name ml-api-test -p 8000:8000 ghcr.io/harpertoken/ml-api:latest
+        # Wait for startup
+        sleep 30
+        # Test health endpoint
+        curl -f http://localhost:8000/health
+        # Test models endpoint
+        curl -f http://localhost:8000/models
+        # Test status endpoint
+        curl -f http://localhost:8000/status
+        # Test chat endpoint
+        curl -f -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"prompt": "Hello"}'
+        # Clean up
+        docker stop ml-api-test
+        docker rm ml-api-test
