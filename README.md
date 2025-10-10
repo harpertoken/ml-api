@@ -65,9 +65,15 @@ to enable commit message validation:
 
 1. copy the hook script to your local git hooks:
 
+   for unix/linux/macos:
    ```bash
    cp scripts/commit-msg .git/hooks/commit-msg
    chmod +x .git/hooks/commit-msg
+   ```
+
+   for windows (powershell):
+   ```powershell
+   cp scripts/commit-msg.ps1 .git/hooks/commit-msg
    ```
 
 ### commit message format
@@ -84,8 +90,14 @@ example: `feat: add user authentication`
 
 if you need to clean up existing commit messages (make lowercase and truncate), use the rewrite script:
 
+for unix/linux/macos:
 ```bash
 bash scripts/rewrite_msg.sh
+```
+
+for windows (powershell):
+```powershell
+get-content | scripts/rewrite_msg.ps1
 ```
 
 for rewriting the entire history:
@@ -93,6 +105,8 @@ for rewriting the entire history:
 ```bash
 git filter-branch --msg-filter 'bash scripts/rewrite_msg.sh' -- --all
 ```
+
+(on windows, use powershell equivalent)
 
 note: this rewrites history, so use with caution and force-push if necessary.
 
