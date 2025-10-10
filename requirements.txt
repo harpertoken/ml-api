@@ -7,3 +7,4 @@ accelerate==0.21.0
 evaluate==0.4.6
 huggingface_hub>=0.30.0
 httpx==0.28.1
+numpy==1.26.4
