@@ -1,5 +1,5 @@
 model:
-  name: "bniladridas/conversational-ai-base-model"
+  name: "gpt2"
   max_length: 256
 
 training:
