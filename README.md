@@ -13,7 +13,7 @@ ml-api is a sleek, restful api for deploying and serving machine learning models
 1. clone the repository:  
    ```bash  
    git clone https://github.com/bniladridas/ml-api.git  
-````
+   ```
 
 2. navigate to the project:
 
@@ -43,7 +43,7 @@ python main.py
 ### example request
 
 ```bash
-curl -x post http://localhost:5000/predict -d '{"data": [your_data_here]}'  
+curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"prompt": "Hello, world!"}'
 ```
 
 ## requirements
