@@ -4,6 +4,6 @@ uvicorn==0.37.0
 torch==2.8.0
 datasets==4.2.0
 accelerate==0.21.0
-evaluate==0.4.0
+evaluate==0.4.6
 huggingface_hub>=0.30.0
 httpx==0.24.1
