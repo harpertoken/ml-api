@@ -45,6 +45,11 @@ python main.py
 curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"prompt": "Hello, world!"}'
 ```
 
+### additional endpoints
+
+- `GET /models`: list available models
+- `GET /status`: get api and model status
+
 ## requirements
 
 * python 3.8+
