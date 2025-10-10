@@ -1,8 +1,7 @@
 # ml-api  
-build, deploy, and scale machine learning with ease.  
+build, deploy, and scale machine learning with ease.
 
-## craft intelligence  
-ml-api is a sleek, restful api for deploying and serving machine learning models. upload models, generate real-time predictions, and manage versions seamlessly.  
+![ML API](images/ml-api.png)
 
 ## features  
 - **upload models**: deploy your models effortlessly.  
