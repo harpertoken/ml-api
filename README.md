@@ -110,6 +110,16 @@ git filter-branch --msg-filter 'bash scripts/rewrite_msg.sh' -- --all
 
 note: this rewrites history, so use with caution and force-push if necessary.
 
+## releases
+
+to create an alpha release:
+
+```bash
+bash scripts/release_alpha.sh
+```
+
+this will bump the version, create a tag, push, and publish a prerelease on github.
+
 ## license
 
 licensed under the mit license. see the [license](license) file for details.
