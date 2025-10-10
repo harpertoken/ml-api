@@ -126,4 +126,4 @@ this will bump the version, create a tag, push, and publish a prerelease on gith
 
 ## license
 
-licensed under the mit license. see the [license](license) file for details.
+licensed under the mit license. see the [LICENSE](LICENSE) file for details.
