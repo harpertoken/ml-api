@@ -12,7 +12,7 @@ ml-api is a sleek, restful api for deploying and serving machine learning models
 ## get started  
 1. clone the repository:  
    ```bash  
-   git clone https://github.com/bniladridas/ml-api.git  
+   git clone https://github.com/harpertoken/ml-api.git  
    ```
 
 2. navigate to the project:
