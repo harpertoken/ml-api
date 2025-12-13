@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import logging
 import os
+import torch
 from pydantic import BaseModel
 
 # Initialize logging
