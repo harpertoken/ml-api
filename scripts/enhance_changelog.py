@@ -6,6 +6,7 @@ This script can be customized to add extra formatting or content to CHANGELOG.md
 
 import os
 
+
 def enhance_changelog():
     changelog_path = "CHANGELOG.md"
     if os.path.exists(changelog_path):
@@ -18,6 +19,7 @@ def enhance_changelog():
         print("Changelog enhanced.")
     else:
         print("CHANGELOG.md not found.")
+
 
 if __name__ == "__main__":
     enhance_changelog()
