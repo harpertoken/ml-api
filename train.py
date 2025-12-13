@@ -1,6 +1,7 @@
 import yaml
 from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments
 from datasets import load_dataset
+import torch
 
 # Load configuration
 with open("config.yaml") as f:
