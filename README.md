@@ -25,7 +25,7 @@ build, deploy, and scale machine learning with ease.
     pip install -r requirements.txt  
     ```
 
-    Note: numpy is not included in requirements.txt due to Python version constraints. For local development with numpy 2.3.3, ensure Python >=3.11 and install separately: `pip install numpy==2.3.3`. Docker builds use Python 3.12 and install numpy 2.3.3 automatically.
+    Note: numpy is not included in requirements.txt due to Python version constraints. For local development with numpy 2.3.3, ensure Python >=3.14 and install separately: `pip install numpy==2.3.3`. Docker builds use Python 3.14 and install numpy 2.3.3 automatically.
 
 ## deploy the web interface
 
@@ -54,8 +54,8 @@ curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '
 
 ## requirements
 
-* python 3.8+ (3.11+ recommended for numpy 2.3.3)
-* fastapi, huggingface transformers, pytorch, numpy (see installation notes)
+* python 3.14+
+* fastapi, huggingface transformers, pytorch 2.9.1, numpy (see installation notes)
 
 ## contribute
 
