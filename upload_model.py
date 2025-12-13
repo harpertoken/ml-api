@@ -1,4 +1,5 @@
 from huggingface_hub import HfApi, login
+import os
 
 # Authenticate with Hugging Face
 login()
