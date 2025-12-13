@@ -1,15 +1,13 @@
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import logging
 import os
-import torch
 from pydantic import BaseModel
 
 # Initialize logging
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -40,18 +38,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class ChatRequest(BaseModel):
     prompt: str
+
 
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
 
+
 @app.post("/chat")
 async def chat(request: ChatRequest):
     try:
         # Log incoming request
-        logger.info(f"Received chat request")
+        logger.info("Received chat request")
 
         # Get user prompt
         prompt = request.prompt
@@ -67,7 +68,7 @@ async def chat(request: ChatRequest):
             do_sample=True,
             top_k=50,
             top_p=0.95,
-            temperature=0.7
+            temperature=0.7,
         )
 
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
@@ -81,6 +82,7 @@ async def chat(request: ChatRequest):
         logger.error(f"Error processing request: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
+
 @app.get("/models")
 async def get_models():
     """Get information about available models."""
@@ -89,10 +91,11 @@ async def get_models():
             {
                 "name": "harpertokenConvAI",
                 "type": "causal_lm",
-                "description": "Conversational AI model for text generation"
+                "description": "Conversational AI model for text generation",
             }
         ]
     }
+
 
 @app.get("/status")
 async def get_status():
@@ -100,9 +103,11 @@ async def get_status():
     return {
         "status": "running",
         "model_loaded": True,
-        "model_name": "harpertokenConvAI"
+        "model_name": "harpertokenConvAI",
     }
+
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
