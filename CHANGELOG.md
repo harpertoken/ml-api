@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.1.2 (2025-12-14)
+
+### Bug Fixes
+
+- Correct yaml indentation in release workflow
+  ([`664f8b8`](https://github.com/harpertoken/ml-api/commit/664f8b8008f7cc1ad96fd56fed3c358873c3a76c))
+
+### Continuous Integration
+
+- Update release to use github_token and python 3.14
+  ([`6cc28f0`](https://github.com/harpertoken/ml-api/commit/6cc28f0635d0311fb3fcc609f14331b6d95c41f3))
+
+
 ## v1.1.1 (2025-12-14)
 
 ### Bug Fixes
