@@ -19,10 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-       - name: Set up Python
-         uses: actions/setup-python@v4
-         with:
-           python-version: '3.14'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.14'
 
       - name: Install dependencies
         run: |
@@ -35,11 +35,11 @@ jobs:
           git config user.name "harper-release-bot"
           git config user.email "237646224+harper-release-bot@users.noreply.github.com"
 
-       - name: Run semantic release
-         run: python -m semantic_release version --push --tag --changelog --vcs-release
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run semantic release
+        run: python -m semantic_release version --push --tag --changelog --vcs-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Enhance changelog
         run: python scripts/enhance_changelog.py
