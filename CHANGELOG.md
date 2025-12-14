@@ -2,6 +2,46 @@
 
 <!-- version list -->
 
+## v1.1.1 (2025-12-14)
+
+### Bug Fixes
+
+- Add back os import in upload_model.py
+  ([`4376792`](https://github.com/harpertoken/ml-api/commit/43767922caca16c5b9f8c3de3c9ec696ff48e741))
+
+- Add back torch import in train.py
+  ([`45974de`](https://github.com/harpertoken/ml-api/commit/45974de09bd4c60054995b4dd160b4dfdf8cc95a))
+
+- Add back torch imports for compatibility
+  ([`b077843`](https://github.com/harpertoken/ml-api/commit/b077843271a992021138ccdba9b41caa553546ef))
+
+- Revert torch to 2.9.1
+  ([`8b4ffea`](https://github.com/harpertoken/ml-api/commit/8b4ffeae606b1a8ce57a92f357c555926c0ddba6))
+
+### Code Style
+
+- Fix flake8 lint issues
+  ([`b5c46ab`](https://github.com/harpertoken/ml-api/commit/b5c46ab53fd6418a48adaf03bab8b46d39f5709b))
+
+### Continuous Integration
+
+- Update python to 3.10 for torch 2.9.1
+  ([`fe5dff1`](https://github.com/harpertoken/ml-api/commit/fe5dff162d3f2d64d497b837762d1c25b5d8bccc))
+
+- Update python version to 3.14
+  ([`5c681f4`](https://github.com/harpertoken/ml-api/commit/5c681f4b22f9a3447e0ecac983c7e8bd224564b5))
+
+### Documentation
+
+- Update python version to 3.14 and torch 2.9.1
+  ([`21a1b16`](https://github.com/harpertoken/ml-api/commit/21a1b161c31bd40fad2584410f311a105a83c4d2))
+
+### Testing
+
+- Add back pytest import
+  ([`d712b13`](https://github.com/harpertoken/ml-api/commit/d712b13b1094b5cdaed3d2f45222f5b88c678f1b))
+
+
 ## v1.1.0 (2025-10-13)
 
 ### Bug Fixes
